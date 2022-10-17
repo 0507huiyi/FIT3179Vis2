@@ -1,0 +1,33 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Stock prices of 5 Tech Companies over Time.",
+    "data": {"url": "https://raw.githubusercontent.com/0507huiyi/air-quality/main/air%20quality.csv"},
+    "mark": "line",
+    "width":400,
+    "height":200,
+    "background":"#e5f0ff",
+
+
+
+    
+    "selection":{"ParentLocation_hightlight":{
+      "type":"multi",
+      "fields":["ParentLocation"],
+      "bind":"legend"}
+    },
+    "encoding": {
+      "x": {"field": "Year","title":" "},
+      "y": {"aggregate":"mean", "field": "FactValueNumeric", "type": "quantitative","title":"PM2.5"},
+      "color": {
+        "field": "ParentLocation", 
+        "type": "nominal",
+        "title":"Continent",
+        "scale":{"scheme":"category10"}
+          },
+      "opacity":{
+          "condition":{"selection":"ParentLocation_hightlight","value":0.6},
+          "value":0.2},
+    "tooltip":[{"field":"ParentLocation","type": "nominal","title":"Continent"},
+      {"aggregate":"mean","field":"FactValueNumeric","type": "quantitative","title":"Air quality"}]
+    }
+  }

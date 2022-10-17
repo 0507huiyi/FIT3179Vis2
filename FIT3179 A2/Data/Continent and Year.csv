@@ -1,0 +1,43 @@
+Continent,Year,Air quality 
+Europe,2010,26.78
+Europe,2011,27.05
+Europe,2012,26.98
+Europe,2013,27.11
+Europe,2014,26.39
+Europe,2015,28.11
+Europe,2016,27.69
+Western Pacific,2010,26.81
+Western Pacific,2011,27.05
+Western Pacific,2012,26.98
+Western Pacific,2013,27.11
+Western Pacific,2014,26.39
+Western Pacific,2015,28.11
+Western Pacific,2016,28.07
+Africa,2010,26.96
+Africa,2011,27.05
+Africa,2012,26.98
+Africa,2013,27.11
+Africa,2014,26.39
+Africa,2015,28.11
+Africa,2016,30.91
+America,2010,26.9
+America,2011,27.05
+America,2012,26.98
+America,2013,27.11
+America,2014,26.39
+America,2015,28.11
+America,2016,29.14
+Eastern Mediterranean,2010,27.27
+Eastern Mediterranean,2011,27.05
+Eastern Mediterranean,2012,26.98
+Eastern Mediterranean,2013,27.11
+Eastern Mediterranean,2014,26.39
+Eastern Mediterranean,2015,28.11
+Eastern Mediterranean,2016,37.89
+South-East Asia,2010,26.92
+South-East Asia,2011,27.05
+South-East Asia,2012,26.98
+South-East Asia,2013,27.11
+South-East Asia,2014,26.39
+South-East Asia,2015,28.11
+South-East Asia,2016,29.47

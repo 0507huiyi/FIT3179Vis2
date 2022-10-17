@@ -1,0 +1,58 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width":520,
+  "height":300,
+  "background":"#e5f0ff",
+  "params": [
+  {
+    "name": "Year_selection",
+    "value": 2016,
+    "bind": {
+      "input": "range",
+      "min": 2010,
+      "max": 2016,
+      "step": 1,
+      "name": "Year: "
+    }
+  }
+],
+
+  "projection": {
+    "type": "equalEarth"
+    },
+
+
+  "data": {
+    "url": " https://raw.githubusercontent.com/0507huiyi/air-quality/main/air%20quality.csv"},
+
+
+  "transform": [
+    {
+      "lookup": "Country",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/0507huiyi/air-quality/main/ne_110m.json",
+            "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+        },
+        "key": "properties.NAME"
+       },
+       "as":"geo"
+    },
+    {"filter": "datum.Year == Year_selection"}
+  ],
+  "mark": {"type": "geoshape"},
+  "encoding": {
+    "shape": {"field": "geo", "type": "geojson"},
+    "color": {
+      "field": "FactValueNumeric",
+      "type": "quantitative",
+      "title":"PM2.5",
+      "scale":{"domain":[10,80],"scheme":"blues"}
+    },
+    "tooltip": [
+      {"field": "Country", "type": "nominal", "title": "Country"},
+      {"field": "FactValueNumeric", "type": "quantitative","title":"PM2.5"},
+      {"field": "Year", "type": "nominal","title":"Year"}
+    ]
+  }
+}
